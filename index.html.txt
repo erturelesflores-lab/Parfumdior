@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARFUM D'OR SV | Catálogo de Decants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0b09;
+            --card-bg: #16120e;
+            --border-color: #2e2419;
+            --accent-gold: #c9a063;
+            --accent-gold-light: #e5be83;
+            --text-primary: #f2eae1;
+            --text-secondary: #a39585;
+            --whatsapp-green: #25d366;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-image: radial-gradient(circle at 50% 10%, #1f1710 0%, #0d0b09 70%);
+            background-attachment: fixed;
+        }
+
+        .mobile-container {
+            width: 100%;
+            max-width: 480px;
+            padding: 20px 16px 40px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 25px 15px 15px 15px;
+            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(180deg, rgba(31,23,16,0.6) 0%, rgba(13,11,9,0) 100%);
+            border-radius: 12px;
+        }
+
+        .brand-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(201, 160, 99, 0.2);
+        }
+
+        .slogan {
+            font-size: 0.7rem;
+            letter-spacing: 2.5px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .badge-bar {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .badge {
+            background: rgba(201, 160, 99, 0.1);
+            border: 1px solid rgba(201, 160, 99, 0.3);
+            color: var(--accent-gold-light);
+            font-size: 0.65rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* INTRO */
+        .catalog-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            margin-top: 5px;
+            position: relative;
+        }
+
+        .catalog-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-gold);
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-gold) 0%, transparent 100%);
+        }
+
+        .perfume-tag {
+            align-self: flex-start;
+            font-size: 0.65rem;
+            color: var(--accent-gold-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        .perfume-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .perfume-desc {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        /* PRICING SELECTOR */
+        .price-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .price-box {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .size {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .atomizations {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+        }
+
+        .price {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-top: 4px;
+        }
+
+        .btn-order {
+            background: linear-gradient(135deg, #1f7a3e 0%, #25d366 100%);
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .btn-order:active {
+            transform: scale(0.98);
+        }
+
+        /* GUARANTEE BOX */
+        .guarantee-card {
+            background: rgba(201, 160, 99, 0.05);
+            border: 1px dashed var(--accent-gold);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .guarantee-icon {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px 10px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 10px;
+        }
+
+        .footer-text {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .location {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mobile-container">
+
+    <!-- HEADER -->
+    <header>
+        <div class="brand-logo">PARFUM D'OR SV</div>
+        <div class="slogan">DOMINA EL LUGAR SIN TENER QUE HABLAR</div>
+        <div class="badge-bar">
+            <span class="badge">100% Originales</span>
+            <span class="badge">Decants de Lujo</span>
+            <span class="badge">El Salvador 🇸🇻</span>
+        </div>
+    </header>
+
+    <div class="catalog-title">CATÁLOGO DE DECANTS</div>
+
+    <!-- HAWAS ELIXIR -->
+    <div class="card">
+        <span class="perfume-tag">✦ Alta Proyección & Duración</span>
+        <h2 class="perfume-name">Hawas Elixir</h2>
+        <p class="perfume-desc">Proyección pesada, dulzura especiada, notas marinas y un fondo ambarado magnético. Diseñado para dominar la noche.</p>
+        
+        <div class="price-options">
+            <div class="price-box">
+                <span class="size">5 ML</span>
+                <span class="atomizations">~75 sprays</span>
+                <span class="price">$5.00</span>
+            </div>
+            <div class="price-box">
+                <span class="size">10 ML</span>
+                <span class="atomizations">~150 sprays</span>
+                <span class="price">$10.00</span>
+            </div>
+        </div>
+
+        <a href="https://wa.me/?text=Hola%2C%20quiero%20pedir%20un%20decant%20de%20Hawas%20Elixir" class="btn-order" target="_blank">
+            💬 Pedir por WhatsApp
+        </a>
+    </div>
+
+    <!-- SCEPTRE MALACHITE -->
+    <div class="card">
+        <span class="perfume-tag">✦ Elegancia Nicho & Exclusividad</span>
+        <h2 class="perfume-name">Sceptre Malachite</h2>
+        <p class="perfume-desc">Aroma sofisticado con acordes amaderados, mango verde fresco y un aura oriental refinada. Elegancia pura sin rodeos.</p>
+        
+        <div class="price-options">
+            <div class="price-box">
+                <span class="size">5 ML</span>
+                <span class="atomizations">~75 sprays</span>
+                <span class="price">$5.00</span>
+            </div>
+            <div class="price-box">
+                <span class="size">10 ML</span>
+                <span class="atomizations">~150 sprays</span>
+                <span class="price">$10.00</span>
+            </div>
+        </div>
+
+        <a href="https://wa.me/?text=Hola%2C%20quiero%20pedir%20un%20decant%20de%20Sceptre%20Malachite" class="btn-order" target="_blank">
+            💬 Pedir por WhatsApp
+        </a>
+    </div>
+
+    <!-- GUARANTEES -->
+    <div class="guarantee-card">
+        <div class="guarantee-item">
+            <span class="guarantee-icon">🛡️</span>
+            <span>Garantía total de autenticidad (Fraccionado directo del frasco original)</span>
+        </div>
+        <div class="guarantee-item">
+            <span class="guarantee-icon">✨</span>
+            <span>Frasco de vidrio con atomizador de fina bruma</span>
+        </div>
+        <div class="guarantee-item">
+            <span class="guarantee-icon">🚚</span>
+            <span>Envíos seguros a todo El Salvador</span>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="footer-text">
+            <strong>PARFUM D'OR SV</strong><br>
+            Decants de Autor & Fragancias Originales<br>
+            <span class="location">Envíos a todo El Salvador 🇸🇻</span>
+        </p>
+    </footer>
+
+</div>
+
+</body>
+</html>
